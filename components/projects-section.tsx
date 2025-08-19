@@ -34,7 +34,7 @@ const projects = [
     description: "A responsive Hacktrack is a hackathon tracker app that helps users discover, organize, and stay updated on upcoming hackathons.",
     image: "/HackTrack.jpg",
     technologies: ["React", "Chart.js", "Tailwind"],
-    githubUrl: "https://github.com/Probal-Sen/HackTrack.git",
+    githubUrl: "https://github.com/Probal-Sen/Portfolio.git",
     liveUrl: "https://hacktrack-nine.vercel.app/",
   },
   {
@@ -44,7 +44,7 @@ const projects = [
     image: "/Portfolio.jpg",
     technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"],
     githubUrl: "https://github.com/username/portfolio",
-    liveUrl: "https://portfolio-demo.vercel.app",
+    liveUrl: "https://probal-sen-portfolio.vercel.app/",
   },
   
 ]
