@@ -20,21 +20,29 @@ export function Navbar() {
 
   const scrollToSection = (href: string) => {
     if (typeof window === "undefined") return
-    const target = document.querySelector(href) as HTMLElement | null
-    if (target) {
-      const navEl = document.querySelector("nav") as HTMLElement | null
-      const navHeight = navEl?.offsetHeight ?? 64
-      const y = target.getBoundingClientRect().top + window.scrollY - navHeight - 8
-      window.scrollTo({ top: y, behavior: "smooth" })
-      if (history.replaceState) {
-        history.replaceState(null, "", href)
+    const performScroll = () => {
+      const target = document.querySelector(href) as HTMLElement | null
+      const SCROLL_OFFSET = 72
+      if (target) {
+        const y = target.getBoundingClientRect().top + window.scrollY - SCROLL_OFFSET
+        window.scrollTo({ top: y, behavior: "smooth" })
+        if (history.replaceState) {
+          history.replaceState(null, "", href)
+        } else {
+          window.location.hash = href
+        }
       } else {
         window.location.hash = href
       }
-    } else {
-      window.location.hash = href
     }
-    setIsOpen(false)
+
+    if (isOpen) {
+      setIsOpen(false)
+      // Wait for the collapse animation to finish so layout is stable
+      setTimeout(performScroll, 320)
+    } else {
+      performScroll()
+    }
   }
 
   return (
