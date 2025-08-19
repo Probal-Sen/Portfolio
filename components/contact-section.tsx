@@ -39,7 +39,7 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8" ref={ref}>
+    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 scroll-mt-24" ref={ref}>
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -60,7 +60,7 @@ export function ContactSection() {
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <Card className="p-6">
+            <Card className="p-6 hover-gradient-border">
               <CardHeader className="p-0 mb-6">
                 <CardTitle className="text-2xl font-semibold text-foreground flex items-center">
                   <Mail className="h-6 w-6 mr-2 text-primary" />
@@ -147,7 +147,7 @@ export function ContactSection() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="space-y-8"
           >
-            <Card className="p-6">
+            <Card className="p-6 hover-gradient-border">
               <CardContent className="p-0">
                 <h3 className="text-xl font-semibold text-foreground mb-6">Let's connect</h3>
                 <p className="text-muted-foreground mb-6 leading-relaxed">
@@ -200,7 +200,7 @@ export function ContactSection() {
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: 0.9 }}
             >
-              <Card className="p-6 bg-gradient-to-br from-primary/5 to-accent/5">
+              <Card className="p-6 bg-gradient-to-br from-primary/5 to-accent/5 hover-gradient-border">
                 <CardContent className="p-0 text-center">
                   <h3 className="text-lg font-semibold text-foreground mb-2">Quick Response</h3>
                   <p className="text-muted-foreground text-sm">

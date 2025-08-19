@@ -19,9 +19,20 @@ export function Navbar() {
   const { theme, setTheme } = useTheme()
 
   const scrollToSection = (href: string) => {
-    const element = document.querySelector(href)
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
+    if (typeof window === "undefined") return
+    const target = document.querySelector(href) as HTMLElement | null
+    if (target) {
+      const navEl = document.querySelector("nav") as HTMLElement | null
+      const navHeight = navEl?.offsetHeight ?? 64
+      const y = target.getBoundingClientRect().top + window.scrollY - navHeight - 8
+      window.scrollTo({ top: y, behavior: "smooth" })
+      if (history.replaceState) {
+        history.replaceState(null, "", href)
+      } else {
+        window.location.hash = href
+      }
+    } else {
+      window.location.hash = href
     }
     setIsOpen(false)
   }
@@ -49,18 +60,22 @@ export function Navbar() {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
               {navItems.map((item, index) => (
-                <motion.button
+                <motion.a
                   key={item.name}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                  onClick={() => scrollToSection(item.href)}
+                  href={item.href}
+                  onClick={(e) => {
+                    e.preventDefault()
+                    scrollToSection(item.href)
+                  }}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="text-foreground hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                  className="text-foreground hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 cursor-pointer"
                 >
                   {item.name}
-                </motion.button>
+                </motion.a>
               ))}
             </div>
           </div>
@@ -122,27 +137,38 @@ export function Navbar() {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="md:hidden overflow-hidden"
+              className="md:hidden overflow-hidden relative z-[60]"
             >
               <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-card rounded-lg mt-2 border border-border">
                 {navItems.map((item, index) => (
-                  <motion.button
+                  <motion.a
                     key={item.name}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.3, delay: index * 0.1 }}
-                    onClick={() => scrollToSection(item.href)}
+                    href={item.href}
+                    onClick={(e) => {
+                      e.preventDefault()
+                      scrollToSection(item.href)
+                    }}
                     whileHover={{ x: 5 }}
                     whileTap={{ scale: 0.95 }}
-                    className="text-foreground hover:text-primary block px-3 py-2 rounded-md text-base font-medium w-full text-left transition-colors duration-200"
+                    className="text-foreground hover:text-primary block px-3 py-2 rounded-md text-base font-medium w-full text-left transition-colors duration-200 cursor-pointer"
                   >
                     {item.name}
-                  </motion.button>
+                  </motion.a>
                 ))}
               </div>
             </motion.div>
           )}
         </AnimatePresence>
+        {isOpen && (
+          <div
+            className="fixed inset-0 z-[45] md:hidden bg-transparent"
+            onClick={() => setIsOpen(false)}
+            aria-hidden="true"
+          />
+        )}
       </div>
     </motion.nav>
   )

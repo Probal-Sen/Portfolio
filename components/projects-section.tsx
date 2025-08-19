@@ -54,7 +54,7 @@ export function ProjectsSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30" ref={ref}>
+    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30 scroll-mt-24" ref={ref}>
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -79,7 +79,7 @@ export function ProjectsSection() {
               whileHover={{ y: -8 }}
               className="h-full"
             >
-              <Card className="group hover:shadow-lg transition-all duration-300 overflow-hidden h-full bg-card hover-gradient-border">
+              <Card className="group hover:shadow-lg transition-all duration-300 overflow-hidden h-full bg-card hover-gradient-border hover-gradient-border--strong">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}

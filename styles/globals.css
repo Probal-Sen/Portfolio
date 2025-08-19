@@ -98,8 +98,8 @@
 .hover-gradient-border::before {
   content: "";
   position: absolute;
-  inset: -2px;
-  padding: 2px;
+  inset: -3px;
+  padding: 3px;
   border-radius: inherit;
   background: conic-gradient(
     from 0deg,
@@ -115,7 +115,7 @@
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   opacity: 0;
-  transition: opacity 200ms ease;
+  transition: opacity 200ms ease, filter 200ms ease;
 }
 
 .hover-gradient-border:hover::before {
@@ -124,5 +124,14 @@
 
 /* Soft glow */
 .hover-gradient-border:hover::before {
-  filter: drop-shadow(0 0 16px hsl(var(--primary) / 0.5));
+  filter: drop-shadow(0 0 28px hsl(var(--primary) / 0.85)) drop-shadow(0 0 10px hsl(var(--primary) / 0.6));
+}
+
+/* Stronger variant specifically for highlight-heavy cards (e.g., Projects) */
+.hover-gradient-border--strong::before {
+  inset: -4px;
+  padding: 4px;
+}
+.hover-gradient-border--strong:hover::before {
+  filter: drop-shadow(0 0 36px hsl(var(--primary) / 0.95)) drop-shadow(0 0 14px hsl(var(--primary) / 0.7));
 }

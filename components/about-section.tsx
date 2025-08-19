@@ -23,7 +23,7 @@ export function AboutSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8" ref={ref}>
+    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 scroll-mt-24" ref={ref}>
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -84,7 +84,7 @@ export function AboutSection() {
             className="space-y-8"
           >
             {/* Skills */}
-            <Card className="p-6 bg-card">
+            <Card className="p-6 bg-card hover-gradient-border">
               <CardContent className="p-0">
                 <h3 className="text-xl font-semibold text-foreground mb-6 flex items-center">
                   <Code className="h-5 w-5 mr-2 text-primary" />
@@ -112,7 +112,7 @@ export function AboutSection() {
             </Card>
 
             {/* Interests */}
-            <Card className="p-6">
+            <Card className="p-6 hover-gradient-border">
               <CardContent className="p-0">
                 <h3 className="text-xl font-semibold text-foreground mb-6 flex items-center">
                   <Heart className="h-5 w-5 mr-2 text-primary" />
@@ -137,7 +137,7 @@ export function AboutSection() {
             </Card>
 
             {/* Education */}
-            <Card className="p-6">
+            <Card className="p-6 hover-gradient-border">
               <CardContent className="p-0">
                 <h3 className="text-xl font-semibold text-foreground mb-6 flex items-center">
                   <GraduationCap className="h-5 w-5 mr-2 text-primary" />
