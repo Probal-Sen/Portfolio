@@ -2,21 +2,34 @@
 
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Code, Database, Globe, Smartphone, GraduationCap, Heart } from "lucide-react"
+import { Code, Database, Globe, Smartphone, GraduationCap, Heart, Code2, Github } from "lucide-react"
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
 
 const skills = [
-  { name: "HTML", icon: Code },
-  { name: "CSS", icon: Code },
-  { name: "JavaScript", icon: Code },
-  { name: "React", icon: Code },
-  { name: "Node.js", icon: Database },
-  { name: "TypeScript", icon: Code },
+  // Core Subjects
+  { name: "DSA", icon: Code },
+  { name: "OOP", icon: Code },
+  // Languages
+  { name: "C++", icon: Code },
+  { name: "C", icon: Code },
+  { name: "Java", icon: Code },
+  { name: "Python", icon: Code },
+  // Web / Frameworks
+  { name: "HTML5", icon: Code },
+  { name: "CSS3", icon: Code },
+  { name: "JavaScript", icon: Globe },
+  { name: "React", icon: Code2 },
+  { name: "TypeScript", icon: Globe },
+  { name: "Node.js", icon: Code2 },
+  { name: "MongoDB", icon: Database },
+  // Tools
+  { name: "VS Code", icon: Smartphone },
+  { name: "GitHub", icon: Github },
 ]
 
-const interests = ["Web Development", "Open Source", "Machine Learning", "Gaming"]
+const interests = ["Web Development", "Open Source","Artificial Intelligence", "Machine Learning","Data Science", "Gaming"]
 
 export function AboutSection() {
   const ref = useRef(null)
@@ -78,12 +91,10 @@ export function AboutSection() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="space-y-8"
+            initial={{ opacity: 0, x: -50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
           >
-            {/* Skills */}
             <Card className="p-6 bg-card hover-gradient-border">
               <CardContent className="p-0">
                 <h3 className="text-xl font-semibold text-foreground mb-6 flex items-center">
@@ -110,7 +121,66 @@ export function AboutSection() {
                 </div>
               </CardContent>
             </Card>
+          </motion.div>
 
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+            transition={{ duration: 0.6, delay: 0.35 }}
+          >
+            <Card className="p-6 hover-gradient-border">
+              <CardContent className="p-0">
+                <h3 className="text-xl font-semibold text-foreground mb-6 flex items-center">
+                  <GraduationCap className="h-5 w-5 mr-2 text-primary" />
+                  Education
+                </h3>
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+                  transition={{ duration: 0.5, delay: 0.6 }}
+                  className="space-y-4"
+                >
+                  <motion.div
+                    whileHover={{ y: -2, scale: 1.01 }}
+                    transition={{ duration: 0.15 }}
+                    className="border-l-2 border-primary pl-4 p-3 rounded-md bg-card/50 hover:bg-muted/50 shadow-sm hover:shadow transition-colors"
+                  >
+                    <h4 className="font-semibold text-foreground">University Institute of Technology, Burdwan University</h4>
+                    <p className="text-muted-foreground">B.E. in Information Technology — CGPA: 9.33</p>
+                    <p className="text-sm text-muted-foreground">2023 – Present • Bardhaman, West Bengal</p>
+                  </motion.div>
+
+                  <motion.div
+                    whileHover={{ y: -2, scale: 1.01 }}
+                    transition={{ duration: 0.15 }}
+                    className="border-l-2 border-primary pl-4 p-3 rounded-md bg-card/50 hover:bg-muted/50 shadow-sm hover:shadow transition-colors"
+                  >
+                    <h4 className="font-semibold text-foreground">Ashoknagar Boys’ Secondary School (H.S.), WBCHSE</h4>
+                    <p className="text-muted-foreground">Class XII — Physics, Chemistry, Mathematics — </p>
+                    <p className="text-muted-foreground">Percentage: 90%</p>
+                    <p className="text-sm text-muted-foreground">2020 – 2022 • Ashoknagar, West Bengal</p>
+                  </motion.div>
+
+                  <motion.div
+                    whileHover={{ y: -2, scale: 1.01 }}
+                    transition={{ duration: 0.15 }}
+                    className="border-l-2 border-primary pl-4 p-3 rounded-md bg-card/50 hover:bg-muted/50 shadow-sm hover:shadow transition-colors"
+                  >
+                    <h4 className="font-semibold text-foreground">Ashoknagar Boys’ Secondary School (H.S.), WBBSE</h4>
+                    <p className="text-muted-foreground">Class X — English, Mathematics, Science, Social Science — Percentage: 89%</p>
+                    <p className="text-sm text-muted-foreground">2014 – 2020 • Ashoknagar, West Bengal</p>
+                  </motion.div>
+                </motion.div>
+              </CardContent>
+            </Card>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="space-y-8"
+          >
             {/* Interests */}
             <Card className="p-6 hover-gradient-border">
               <CardContent className="p-0">
@@ -136,51 +206,7 @@ export function AboutSection() {
               </CardContent>
             </Card>
 
-            {/* Education */}
-            <Card className="p-6 hover-gradient-border">
-              <CardContent className="p-0">
-                <h3 className="text-xl font-semibold text-foreground mb-6 flex items-center">
-                  <GraduationCap className="h-5 w-5 mr-2 text-primary" />
-                  Education
-                </h3>
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-                  transition={{ duration: 0.5, delay: 1.8 }}
-                  className="space-y-4"
-                >
-                  <motion.div
-                    whileHover={{ y: -2, scale: 1.01 }}
-                    transition={{ duration: 0.15 }}
-                    className="border-l-2 border-primary pl-4 p-3 rounded-md bg-card/50 hover:bg-muted/50 shadow-sm hover:shadow transition-colors"
-                  >
-                    <h4 className="font-semibold text-foreground">University Institute of Technology, Burdwan University</h4>
-                    <p className="text-muted-foreground">B.E. in Information Technology — CGPA: 9.33</p>
-                    <p className="text-sm text-muted-foreground">2023 – Present • Bardhaman, West Bengal</p>
-                  </motion.div>
-
-                  <motion.div
-                    whileHover={{ y: -2, scale: 1.01 }}
-                    transition={{ duration: 0.15 }}
-                    className="border-l-2 border-primary pl-4 p-3 rounded-md bg-card/50 hover:bg-muted/50 shadow-sm hover:shadow transition-colors"
-                  >
-                    <h4 className="font-semibold text-foreground">Ashoknagar Boys’ Secondary School (H.S.), WBCHSE</h4>
-                    <p className="text-muted-foreground">Class XII — Physics, Chemistry, Mathematics — Percentage: 90%</p>
-                    <p className="text-sm text-muted-foreground">2020 – 2022 • Ashoknagar, West Bengal</p>
-                  </motion.div>
-
-                  <motion.div
-                    whileHover={{ y: -2, scale: 1.01 }}
-                    transition={{ duration: 0.15 }}
-                    className="border-l-2 border-primary pl-4 p-3 rounded-md bg-card/50 hover:bg-muted/50 shadow-sm hover:shadow transition-colors"
-                  >
-                    <h4 className="font-semibold text-foreground">Ashoknagar Boys’ Secondary School (H.S.), WBBSE</h4>
-                    <p className="text-muted-foreground">Class X — English, Mathematics, Science, Social Science — Percentage: 89%</p>
-                    <p className="text-sm text-muted-foreground">2014 – 2020 • Ashoknagar, West Bengal</p>
-                  </motion.div>
-                </motion.div>
-              </CardContent>
-            </Card>
+            
           </motion.div>
         </div>
       </div>
