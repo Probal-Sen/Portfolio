@@ -43,7 +43,7 @@ const projects = [
     description: "A modern, responsive portfolio website built with Next.js and featuring smooth animations.",
     image: "/Portfolio.jpg",
     technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"],
-    githubUrl: "https://github.com/username/portfolio",
+    githubUrl: "https://github.com/Probal-Sen/Portfolio.git",
     liveUrl: "https://probal-sen-portfolio.vercel.app/",
   },
   
