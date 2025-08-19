@@ -79,7 +79,7 @@ export function ProjectsSection() {
               whileHover={{ y: -8 }}
               className="h-full"
             >
-              <Card className="group hover:shadow-lg transition-all duration-300 overflow-hidden h-full">
+              <Card className="group hover:shadow-lg transition-all duration-300 overflow-hidden h-full bg-card hover-gradient-border">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}

@@ -14,7 +14,6 @@ const skills = [
   { name: "React", icon: Code },
   { name: "Node.js", icon: Database },
   { name: "TypeScript", icon: Code },
-  { name: "Tailwind CSS", icon: Smartphone },
 ]
 
 const interests = ["Web Development", "Open Source", "Machine Learning", "Gaming"]
@@ -85,7 +84,7 @@ export function AboutSection() {
             className="space-y-8"
           >
             {/* Skills */}
-            <Card className="p-6">
+            <Card className="p-6 bg-card">
               <CardContent className="p-0">
                 <h3 className="text-xl font-semibold text-foreground mb-6 flex items-center">
                   <Code className="h-5 w-5 mr-2 text-primary" />
