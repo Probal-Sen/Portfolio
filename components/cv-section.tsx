@@ -30,29 +30,36 @@ export function CVSection() {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <Card className="p-6 hover-gradient-border">
-            <CardHeader className="p-0 mb-6">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              
+              {/* Left Side - Title */}
               <CardTitle className="text-foreground flex items-center">
                 <FileText className="h-5 w-5 mr-2 text-primary" />
                 Probal Sen — CV
               </CardTitle>
-            </CardHeader>
-            <CardContent className="p-0">
-              <div className="flex flex-col sm:flex-row items-center sm:items-end justify-between gap-4">
-                <p className="text-muted-foreground">PDF located at <code className="text-foreground">/PROBAL_SEN_CV.pdf</code></p>
-                <div className="flex gap-2">
-                  <Button asChild>
-                    <a href="/PROBAL_SEN_CV.pdf" target="_blank" rel="noopener noreferrer">
-                      <FileText className="h-4 w-4 mr-2" /> View CV
-                    </a>
-                  </Button>
-                  <Button variant="outline" asChild>
-                    <a href="/Probal-CV.pdf" download>
-                      <Download className="h-4 w-4 mr-2" /> Download
-                    </a>
-                  </Button>
-                </div>
+
+              {/* Right Side - Buttons */}
+              <div className="flex gap-2">
+                <Button asChild>
+                  <a
+                    href="/PROBAL_SEN_CV.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FileText className="h-4 w-4 mr-2" />
+                    View CV
+                  </a>
+                </Button>
+
+                <Button variant="outline" asChild>
+                  <a href="/PROBAL_SEN_CV.pdf" download>
+                    <Download className="h-4 w-4 mr-2" />
+                    Download
+                  </a>
+                </Button>
               </div>
-            </CardContent>
+
+            </div>
           </Card>
         </motion.div>
       </div>
