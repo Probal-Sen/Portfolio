@@ -17,19 +17,19 @@ const skills = [
   { name: "Java", icon: Code },
   { name: "Python", icon: Code },
   // Web / Frameworks
-  { name: "HTML5", icon: Code },
-  { name: "CSS3", icon: Code },
-  { name: "JavaScript", icon: Globe },
-  { name: "React", icon: Code2 },
-  { name: "TypeScript", icon: Globe },
-  { name: "Node.js", icon: Code2 },
+  { name: "Pandas", icon: Code },
+  { name: "Numpy", icon: Code },
+  { name: "Matplotlib", icon: Code2 },
+  { name: "Scikit-learn", icon: Code2 },
+  { name: "Power BI", icon: Globe },
+  { name: "MySQL", icon: Database },
   { name: "MongoDB", icon: Database },
   // Tools
   { name: "VS Code", icon: Smartphone },
   { name: "GitHub", icon: Github },
 ]
 
-const interests = ["Web Development", "Open Source","Artificial Intelligence", "Machine Learning","Data Science", "Gaming"]
+const interests = ["Open Source","Artificial Intelligence", "Machine Learning","Data Science", "Web Development", "Gaming"]
 
 export function AboutSection() {
   const ref = useRef(null)
@@ -75,9 +75,8 @@ export function AboutSection() {
                   <div className="space-y-4">
                     <h3 className="text-2xl font-bold text-foreground">Probal Sen</h3>
                     <p className="text-muted-foreground leading-relaxed">
-                      I'm a passionate web developer and Information Technology student with a love for creating intuitive and
-                      beautiful digital experiences. Currently pursuing my degree while building real-world projects
-                      that solve meaningful problems.
+                      I'm a passionate AI/ML and Data Science enthusiast and Information Technology student with a strong interest in building intelligent systems and extracting meaningful insights from data. Currently pursuing my degree while working on real-world projects that leverage machine learning and data-driven solutions.
+
                     </p>
 
                     <div className="flex items-center justify-center space-x-2 text-muted-foreground">
@@ -146,7 +145,7 @@ export function AboutSection() {
                     className="border-l-2 border-primary pl-4 p-3 rounded-md bg-card/50 hover:bg-muted/50 shadow-sm hover:shadow transition-colors"
                   >
                     <h4 className="font-semibold text-foreground">University Institute of Technology, Burdwan University</h4>
-                    <p className="text-muted-foreground">B.E. in Information Technology — CGPA: 9.33</p>
+                    <p className="text-muted-foreground">B.E. in Information Technology — CGPA: 9.23</p>
                     <p className="text-sm text-muted-foreground">2023 – Present • Bardhaman, West Bengal</p>
                   </motion.div>
 

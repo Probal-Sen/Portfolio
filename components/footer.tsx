@@ -6,7 +6,7 @@ export function Footer() {
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="text-center md:text-left">
-            <p className="text-sm text-muted-foreground mt-1">© 2025 Probal Sen. All rights reserved.</p>
+            <p className="text-sm text-muted-foreground mt-1">© 2026 Probal Sen. All rights reserved.</p>
           </div>
 
           <div className="flex items-center space-x-4">

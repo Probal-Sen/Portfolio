@@ -39,7 +39,7 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-xl sm:text-2xl text-muted-foreground font-medium"
           >
-            Web Developer & Student
+            AI/ML, Data Science Enthusiast & Student
           </motion.p>
 
           <motion.p
@@ -48,8 +48,8 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed"
           >
-            Passionate about creating beautiful, functional web experiences. I love turning ideas into reality through
-            clean code and thoughtful design.
+            AI/ML and Data Science enthusiast passionate about building intelligent solutions and uncovering insights from data. Driven by curiosity, innovation, and continuous learning.
+
           </motion.p>
 
           <motion.div

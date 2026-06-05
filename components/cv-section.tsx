@@ -38,10 +38,10 @@ export function CVSection() {
             </CardHeader>
             <CardContent className="p-0">
               <div className="flex flex-col sm:flex-row items-center sm:items-end justify-between gap-4">
-                <p className="text-muted-foreground">PDF located at <code className="text-foreground">/Probal-CV.pdf</code></p>
+                <p className="text-muted-foreground">PDF located at <code className="text-foreground">/PROBAL_SEN_CV.pdf</code></p>
                 <div className="flex gap-2">
                   <Button asChild>
-                    <a href="/Probal-CV.pdf" target="_blank" rel="noopener noreferrer">
+                    <a href="/PROBAL_SEN_CV.pdf" target="_blank" rel="noopener noreferrer">
                       <FileText className="h-4 w-4 mr-2" /> View CV
                     </a>
                   </Button>
